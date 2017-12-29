@@ -1,27 +1,41 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibieron que esta publicación se guarde:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <%= form_with(model: post, local: true) do |form| %>  
+          <% if post.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(post.errors.count, "error") %> prohibieron que esta publicación se guarde:</h2>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+              <ul>
+              <% post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+        <div class="form-group">
+          <div class="field">
+            <%= form.label :título %>
+            <%= form.text_field :title, id: :post_title, class:"form-control", placeholder:"Ingresa el título" %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="field">
+            <%= form.label :cuerpo %>
+            <%= form.text_area :body, id: :post_body, class:"form-control", placeholder:"Ingresa el contenido de tu Post" %>
+          </div>
+        </div> 
+
+        <div class="actions">
+          <%= form.submit class:"btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>      
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :título %>
-    <%= form.text_field :title, id: :post_title %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :cuerpo %>
-    <%= form.text_area :body, id: :post_body %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+
+

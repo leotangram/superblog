@@ -1,6 +1,19 @@
-<h1>Editando Post</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+			<h1>Editando Post</h1>
+  	</div>
+	</div>
+</div>
 
 <%= render 'form', post: @post %>
 
-<%= link_to 'Ver', @post %> |
-<%= link_to 'Volver', posts_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+			<%= link_to 'Ver',  @post, class: "badge badge-info" %> |
+			<%= link_to 'Volver', posts_path, class: "badge badge-info" %>
+  	</div>
+	</div>
+</div>
+
