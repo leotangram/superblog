@@ -16,9 +16,8 @@
         <tbody>
           <% @posts.each do |post| %>
             <tr>
-              <td><%= post.title %></td>
+              <td><%= link_to post.title, post %></td>
               <td><%= post.body %></td>
-              <td ><%= link_to 'Ver', post, class: "badge badge-info" %></td>
               <td><%= link_to 'Editar', edit_post_path(post), class: "badge badge-info" %></td>
               <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estás seguro?' }, class: "badge badge-info" %></td>
             </tr>
