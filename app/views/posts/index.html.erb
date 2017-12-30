@@ -16,18 +16,30 @@
         <tbody>
           <% @posts.each do |post| %>
             <tr>
-              <td><%= link_to post.title, post %></td>
+              <% if signed_in?%>
+                <td><%= link_to post.title, post %></td>
+              <% else %>
+                <td><%= post.title%></td>
+              <% end %>
               <td><%= post.body %></td>
-              <td><%= link_to 'Editar', edit_post_path(post), class: "badge badge-info" %></td>
-              <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estás seguro?' }, class: "badge badge-info" %></td>
+              <% if signed_in? %>
+                <td><%= link_to 'Editar', edit_post_path(post), class: "badge badge-info" %></td>
+                <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estás seguro?' }, class: "badge badge-info" %></td>
+              <% end %>
+              <% if signed_in?%>
+              <% else %>
+                <td> <%= link_to 'Inicia sesión para ver el post completo', new_user_session_path %> </td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>
       </table>
 
       <br>
-
+      
+      <% if  signed_in?%>
       <%= link_to 'Nuevo Post', new_post_path, class: "badge badge-info" %>
+      <% end %>
     </div>
   </div>
 </div>
