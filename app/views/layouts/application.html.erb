@@ -22,6 +22,10 @@
     <% else %>
         <%= link_to 'Iniciar Sesión', new_user_session_path %>
     <% end %>
+
+    <% if signed_in? %>
+      <div>Hola <%= current_user.email %></div>
+    <% end %>
   	
     <%= yield %>
   </body>
