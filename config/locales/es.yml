@@ -9,7 +9,6 @@ es:
       user: 
         email: "El Correo electronico"
         password: "La Contraseña"
-        name: "El Nombre"
       post:
         title: "El Título"
         body: "El Cuerpo"
