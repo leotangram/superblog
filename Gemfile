@@ -36,6 +36,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Create Users
 gem 'devise'
 
+# Gravatar
+gem 'gravatar-ultimate'
+# Para que soporte gravatar, ya que las nuevas versiones de Ruby no lo soportan
+gem 'xmlrpc'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

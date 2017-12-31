@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   def show
     if signed_in?
     else
-    redirect_to posts_path, notice: 'Debes iniciar sesión para poder ver el Post completo'  
+      redirect_to posts_path, notice: 'Debes iniciar sesión para poder ver el Post completo'  
     end
   end
 
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def edit
     if signed_in?
     else
-    redirect_to posts_path, notice: 'Debes iniciar sesión para poder ver el Post completo'  
+      redirect_to posts_path, notice: 'Debes iniciar sesión para poder ver el Post completo'  
     end
   end
 

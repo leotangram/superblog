@@ -1,14 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-10 offset-sm-1">
-
+<div class="post-page">
+  <header class="post-header">		
 			<h1><%= @post.title %></h1>
-
 			<p><%= @post.body %></p>
+	</header>
 
-			<%= link_to 'Editar', edit_post_path(@post), class: "badge badge-info" %> |
-			<%= link_to 'Volver', posts_path, class: "badge badge-info" %>
-
-    </div>
+  <div class="comments">
+    <h2>Comentarios</h2>
   </div>
 </div>
+    
