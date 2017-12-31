@@ -41,6 +41,8 @@ gem 'gravatar-ultimate'
 # Para que soporte gravatar, ya que las nuevas versiones de Ruby no lo soportan
 gem 'xmlrpc'
 
+gem 'annotate'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
