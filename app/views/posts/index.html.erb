@@ -7,6 +7,7 @@
         <div class="post clearfix">
           <div class="post-details">
             <span class="post-title"><%= link_to post.title, post %></span> <br>
+            <span class="post-time">Publicado por <%= post.user.email %> hace <%= time_ago_in_words(post.created_at) %> </span>
             <span class="post-body"><%= post.body %></span>
           </div>
           <div class="post-comments">
@@ -19,3 +20,5 @@
     </div>
   </div>
 </div>
+
+

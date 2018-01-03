@@ -42,6 +42,7 @@ gem 'gravatar-ultimate'
 gem 'xmlrpc'
 
 gem 'annotate'
+gem 'rails-i18n', '~> 5.0.0' # For 5.0.x and 5.1.x
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
