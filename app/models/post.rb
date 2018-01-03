@@ -15,7 +15,7 @@ class Post < ApplicationRecord
 	has_many :comments
 
 	validates :title, presence: true
-	validates :body, presence: true
+	validates :body, presence: true, length: { minimum: 250 }
 
 	default_scope { order("created_at DESC") }
 end
