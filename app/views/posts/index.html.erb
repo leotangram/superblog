@@ -14,6 +14,13 @@
             <span class="material-icons">mode_comment</span>
             <span class="comment-count"><%= post.comments.count %></span>
           </div>
+          <% if signed_in? && post.user == current_user %>
+          <div class="actions">
+            <%= link_to "<span class='material-icons'>edit</span>".html_safe, edit_post_path(post) %>
+            <%= link_to "<span class='material-icons'>delete</span>".html_safe, @post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este Post?" } %>
+          </div>
+            
+          <% end %>
         </div>
         <% end %>
       </div>

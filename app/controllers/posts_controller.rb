@@ -29,6 +29,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
     if signed_in?
     else
       redirect_to posts_path, notice: 'Debes iniciar sesión para poder ver el Post completo'  
@@ -55,6 +56,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
+      @post = Post.find(params[:id])
       if @post.update(post_params)
         format.html { redirect_to posts_path, notice: 'El Post se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @post }
