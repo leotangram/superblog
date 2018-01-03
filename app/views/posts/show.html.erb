@@ -15,7 +15,7 @@
 
     <% @post.comments.each do |comment| %>
       <div class="panel panel-default">
-        <header class="panel-heading"><img src="<%= Gravatar.new("#{comment.user.email}").image_url %>" class="rounded-circle" /></header>
+        <header class="panel-heading"><img style="width: 37px;" src="<%= Gravatar.new("#{comment.user.email}").image_url %>" class="rounded-circle" /></header>
         <div class="panel-body"><%= comment.body %></div>
       </div>
     <% end %>
