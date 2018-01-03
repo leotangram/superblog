@@ -9,6 +9,10 @@
             <span class="post-title"><%= link_to post.title, post %></span> <br>
             <span class="post-body"><%= post.body %></span>
           </div>
+          <div class="post-comments">
+            <span class="material-icons">mode_comment</span>
+            <span class="comment-count"><%= post.comments.count %></span>
+          </div>
         </div>
         <% end %>
       </div>
