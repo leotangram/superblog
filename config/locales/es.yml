@@ -7,8 +7,8 @@ es:
   activerecord: 
     attributes:
       user: 
-        email: "El Correo electronico"
-        password: "La Contraseña"
+        email: "email"
+        password: "contraseña"
       post:
         title: "El Título"
         body: "El Cuerpo"
